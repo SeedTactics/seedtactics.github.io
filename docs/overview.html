@@ -1,0 +1,125 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Overview · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="FMS Insight is a program which runs on an flexible machining system (FMS)"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Overview · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="FMS Insight is a program which runs on an flexible machining system (FMS)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basics</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Overview</h1></header><article><div><span><p>FMS Insight is a program which runs on an flexible machining system (FMS)
+cell controller which has the following goals:</p>
+<ul>
+<li>Track material by barcode serial throughout the manufacturing process, tracking
+the material through both automated handling and manual handling. The documentation on
+<a href="/docs/material-tracking.html">material tracking</a> goes into more detail on the goals and challenges
+of tracking. The log of all material is stored in a database.</li>
+<li>Use the material tracking to help the operators on the shop floor by providing instructions
+and data displays, for example to provide the inspection operator with data about the
+specific part being inspected. FMS Insight provides a <a href="/docs/client-launch.html">HTML client</a>
+optimized for touchscreen use.</li>
+<li>Disseminate information about the daily cell operation throughout the factory. FMS Insight provides targeted pages
+for engineering, quality control, supervisors, scheduling, and management.</li>
+<li>Facilitate continuous improvement and cost reduction via analytics. FMS Insight assists in a monthly review
+of the cell by display metrics and graphs to help improve the cost/piece and efficiency
+of the FMS. The documentation on <a href="/docs/improve-fms.html">improving an FMS</a> discusses in more
+detail how analytics can be used to improve the cost/piece of a cell.</li>
+<li>Simplify job/plan data creation in the cell controller to prevent traffic jams. Too many
+jobs with too much demand in an automated system leads to pallet traffic jams just like too many
+cars on the road lead to traffic jams. When job/plan data creation inside the cell controller
+is simple and painless, it is much easier to rate-limit the flow of demand into the system
+to prevent traffic jams.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="server"></a><a href="#server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server</h2>
+<p>To achive these objectives, FMS Insight provides a server which runs on the cell controller
+and stores a log of all events that occur in the cell and allows planned jobs to be sent into the cell controller.</p>
+<p>The FMS Insight server maintains a log of all
+events. These events include machine cycle start, machine cycle end, load
+start, load end, pallet movements, inspections, serial assignment, wash, and
+others. The server also maintains a log of planned jobs; each planned job is
+stored with its date, part name, planned quantities, flexibility, and other
+features of the job. The immutable log of events and planned jobs is used to
+drive all decisions and analysis of the cell.</p>
+<p>The second core feature of the FMS Insight server is to translate planned
+jobs into the cell controller. The FMS Insight server does not implement any
+complex logic or control itself; instead FMS Insight is a generic conduit
+which allows other software to communicate jobs into the cell controller.
+Since each project and ERP is different, FMS Insight does not have a way of
+creating the jobs (other, customized software such as
+<a href="https://www.seedtactics.com/products/seedtactic-orderlink">SeedTactic: OrderLink</a> is required).
+Nevertheless, FMS Insight eases this task by defining a common high-level job
+description and implementing the messy details of converting to the specific
+cell controller format and creating the parts, pallets, jobs, and schedules.</p>
+<h2><a class="anchor" aria-hidden="true" id="client"></a><a href="#client" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Client</h2>
+<p>FMS Insight provides a touchscreen optimized <a href="/docs/client-launch.html">HTML client</a>. Many people
+throughout the factory interact with the cell in different ways. Thus, FMS Insight provides
+specific pages targeted at specific users which display relevant information. We suggest that
+each user bookmarks the relevant page; for example, engineers in the quality department should just
+bookmark the quality page in FMS Insight, visiting it directly to monitor the cell. All FMS
+Insight pages support a connected <a href="/docs/client-scanners.html">barcode scanner</a> to scan the serial number
+of a part.</p>
+<h5><a class="anchor" aria-hidden="true" id="shop-floor"></a><a href="#shop-floor" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Shop Floor</h5>
+<p>FMS Insight provides several <a href="/docs/client-station-monitor.html">station monitor</a>
+pages. These pages are intended to be viewed at various operator stations
+throughout the factory and provide information to the operator on what
+actions to take. For example, at the load station it shows what to load and
+unload and at the inspection stand it shows what inspections were triggered.</p>
+<h5><a class="anchor" aria-hidden="true" id="daily-monitoring"></a><a href="#daily-monitoring" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Daily Monitoring</h5>
+<p>FMS Insight provides targeted pages to assist with the day-to-day operation of the cell.
+There is a targeted page for <a href="/docs/client-operations.html">factory floor supervisors</a>, <a href="/docs/client-engineering.html">engineering/programming</a>,
+and <a href="/docs/client-quality.html">quality control</a>.</p>
+<h5><a class="anchor" aria-hidden="true" id="monthly-review"></a><a href="#monthly-review" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Monthly Review</h5>
+<p>FMS Insight supports continuous improvement by assisting with a monthly review.
+We suggest that approximately once a month, all stakeholders review the operation of the cell and
+decide on potential improvements. FMS Insight provides a <a href="/docs/client-flexibility-analysis.html">flexibility analysis</a>
+page which displays a monthly summary of the cell, displays cost/piece, and helps identify areas for improvement.</p>
+<p>FMS Insight also provides a <a href="/docs/client-backup-viewer.html">Backup Viewer</a>, which is a standalone program to
+view data directly historical backups.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/getting-started.html"><span>Getting Started</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#server">Server</a></li><li><a href="#client">Client</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2019 Black Maple Software, LLC</section></footer></div></body></html>

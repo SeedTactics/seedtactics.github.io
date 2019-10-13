@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Flexibility Analysis · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="FMS Insight supports continuous improvement by assisting with a monthly review."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Flexibility Analysis · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="FMS Insight supports continuous improvement by assisting with a monthly review."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Client</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Flexibility Analysis</h1></header><article><div><span><p>FMS Insight supports continuous improvement by assisting with a monthly review.
+We suggest that approximately once a month, all stakeholders review the operation of the cell and
+decide on potential improvements. The <a href="/docs/improve-fms.html">improve an FMS</a>
+documentation goes into more details about how to make the most of these
+efficiency calculations.</p>
+<p><img src="/docs/assets/insight-choose-analysis-month.png" alt="Screenshot of choosing analysis month"></p>
+<p>At the top of the page are two radio buttons allowing you to analyize either the last
+30 days or a specific calendar month.</p>
+<h1><a class="anchor" aria-hidden="true" id="efficiency"></a><a href="#efficiency" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Efficiency</h1>
+<p>The best metric for continuous improvement of an FMS is not cost/piece but
+instead is the bottlenecks and utilization of system resources (the
+goal is to produce more stuff with the same machines and quality). The
+efficiency tab shows some charts and graphs for a monthly summary of the
+operation of the cell, displaying reports that in our experience are very
+helpful to find and fix bottlenecks. We suggest you review this data once a
+month and use these reports to gradually alter the flexibility or operation
+of the cell to improve the performance.</p>
+<h2><a class="anchor" aria-hidden="true" id="station-cycles"></a><a href="#station-cycles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Station Cycles</h2>
+<p><img src="/docs/assets/insight-analysis-cycles.png" alt="Screenshot of station cycle chart"></p>
+<p>The station cycle chart displays a point for each load and machine cycle. The
+cycles can be filtered by a specific part, a specific machine, a specific
+pallet or a combination. The x-axis is the days of the month and the y-axis
+is cycle time in minutes. The cycle time is the wall clock time between cycle
+start and cycle end of the machine or the wall clock time between a pallet
+arriving at the load station to the pallet leaving the load station. The
+legend at the bottom shows which colors correspond to which stations, and by
+clicking on stations in the legend you can enable or disable the viewing of
+specific stations. By clicking on a point you can obtain details about that
+specific cycle in a tooltip and open the material card for the cycle.
+Finally, the chart can be zoomed by clicking and dragging.</p>
+<p>The example screenshot above is an example of a part program which might need
+improvement. We see that most of the machine cycles are fine at around 40
+minutes, but there are quite a few machine cycles longer than 40 minutes
+which likely come from program interruptions, tool problems, etc. and since
+there are so many it is likely worth it to investigate and improve the part
+program. On the other hand, if there were only a couple of machine cycles
+longer than 40 minutes, we might instead conclude that it is not worth the
+effort to spend a large amount of time focusing on this part. Finally, the
+load station cycles seem consistent at between 5 and 15 minutes so likely no
+improvements are required at the load station. If instead there were a
+large number of outlier load/unload times, we might spend some time investigating
+and potentially making operational changes. By periodically viewing this
+cycle chart for each part, you can get a feel for your specific system
+and iteratively detect and fix problems.</p>
+<p><img src="/docs/assets/insight-analysis-cycle-table.png" alt="Screenshot of station cycle table"></p>
+<p>The cycles can be toggled to display the raw data in a table instead of a chart.
+The table can be filtered, sorted, and restricted to a specific date range. The resulting
+raw data can be copied to the clipboard to be pasted into a spreadsheet for further analysis.</p>
+<h2><a class="anchor" aria-hidden="true" id="pallet-cycles"></a><a href="#pallet-cycles" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Pallet Cycles</h2>
+<p><img src="/docs/assets/insight-analysis-pallets.png" alt="Screenshot of pallet cycle chart"></p>
+<p>Select a pallet from the combo box in the top-right. Once selected, all
+pallet cycles are displayed. The x-axis is the days of the month and the
+y-axis is the pallet cycle time in minutes. A pallet cycle time is the wall
+clock time from when a pallet leaves the load station to the next time it
+leaves the load station. This will therefore include cart transfer time,
+buffer time, machining time, and load/unload time. By clicking on a point,
+you can obtain more information about the pallet cycle in a tooltip.
+Similarly to the station cycle chart, the pallet cycle chart can be zoomed by
+clicking and dragging or the zoom range can be manually set via the button in
+the bottom-right.</p>
+<p>The pallet cycle chart is best used to determine if the cell is running lean
+and validate the <a href="https://www.seedtactics.com/docs/concepts/preventing-traffic-jams">daily allocation and scheduling
+technique</a>
+to determine if there are traffic jams occuring in the pallets. In a lean,
+healthy cell, most pallet cycles should be low and reasonably consistent. If
+pallet cycle times vary wildly, there is likely taffic jams or other flow problems.</p>
+<h2><a class="anchor" aria-hidden="true" id="station-oee"></a><a href="#station-oee" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Station OEE</h2>
+<p><img src="/docs/assets/insight-analysis-station-oee.png" alt="Screenshot of Station OEE Heatmap"></p>
+<p>The Station OEE heatmap shows the station overall equipment effectiveness (OEE)
+over the month. On the x-axis are the days of the month and on the y-axis are
+the machines and load stations. For each station and each day, FMS Insight adds
+up the expected operation time for each part cycle and then divides by 24 hours
+to obtain a percentage that the station was busy with productive work. (If station cycles
+were longer than expected, this extra time is not counted in the OEE. Thus the Station OEE
+should only be focused on seriously once the station cycles are mostly stable at their
+expected cycle time.) For each grid cell in the chart, the OEE percentage is drawn
+with a color with darker colors higher OEE and lighter colors lower OEE. A grid cell
+can be moused over to obtain extra information in a tooltip.</p>
+<p>The Station OEE heatmap helps visualize how balanced the machines were loaded over the month.
+We want to see all the machines consitantly roughly the same color. If you see that
+a machine has a lighter color for a couple days, that indiciates either the machine was down or
+that the daily mix for that day did not have enough flexibility. You should then consider
+picking a part and extending that part to run on the lightly loaded machine. To find such a
+part, you can use the part production chart below to see which part mix was run on this day
+to help find a part that might be changed to run on the lightly loaded machine.</p>
+<h2><a class="anchor" aria-hidden="true" id="part-production"></a><a href="#part-production" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part Production</h2>
+<p><img src="/docs/assets/insight-analysis-part-completed.png" alt="Screenshot of Part Production Heatmap"></p>
+<p>The Part Production heatmap shows the distribution of completed parts over
+the month. On the x-axis are the days of the month and on the y-axis are the
+part types. For each part and each day, FMS Insight counts how many parts
+were produced that day. For each grid cell in the chart, the entry
+is drawn as a color with darker colors higher machine hours and lighter colors lower
+machine hours. A grid cell can be moused over to obtain extra information in a
+tooltip.</p>
+<p>The part production OEE heatmap is mainly useful to visualize the part mix as it
+varies throughout the month, by comparing the relative color shades. Also, it can help
+find a part to change move onto a lightly loaded machine. For example, consider that a machine
+is found to be lightly loaded via the station OEE heatmap. That same day can be viewed on
+the part production OEE heatmap and the darkest colored part was the highest run that day and
+could be considered to be extended to be run on the lightly loaded machine.</p>
+<p>Note that these heatmaps should only be used to brainstorm ideas. We would still
+to investigate if expanding <code>yyy</code> to include machine 2 would increase overall
+system performance. Are there enough pallets? How many extra inspections are required?
+Will this cause a traffic jam? These questions can be answered using simulation, <em>SeedTactic: Designer</em>,
+Little's Law, or a tool such as our <a href="https://www.seedtactics.com/products/seedtactic-planning">SeedTactic: Planning</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="inspections"></a><a href="#inspections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Inspections</h2>
+<p><img src="/docs/assets/insight-analysis-sankey.png" alt="Screenshot of Inspection Sankey"></p>
+<p>The inspections chart shows a Sankey diagram of the material paths and
+inspection results. First, select an inspection type and then select a part
+in the top right. FMS Insight then loads all cycles for this part for the
+entire month and groups them according to their path (A path consists of a
+pallet and machine for each process or sequence, plus the final inspection
+result.) The counts of the various paths are then charted using a Sankey
+diagram, where the widths of the bars are drawn scaled based on the quantity
+of parts which took that path, with parts &quot;flowing&quot; from left to right.
+Any link can be moused over to obtain additional information in a tooltip.</p>
+<p>For example, in the above screenshot, one path is to use pallet 1 and machine
+2 (P1,M2) for the first sequence and then pallet 1 and machine 1 for the
+second sequence (P1,M1). This corresponds to the large top link between <code>raw</code>
+and <code>P1,M2</code> and then the downward-curved link between <code>P1,M2</code> on the left and
+<code>P1,M1</code> on the right. The path is then further split with uninspected parts
+and successfully inspected parts.</p>
+<p>The width of these paths shows the relative count of parts taking these
+paths. For example, starting from using pallet 1 and machine 1 on the first
+sequence, parts either go to <code>P1,M1</code> meaning they return to machine 1 for
+their second sequence or they go to <code>P1,M2</code> meaning the go to machine 2 for
+their second sequence. The relative widths of the bars show that this is
+about equal but slightly more parts return back to machine 1 for their second
+sequence. Similarly, the width of the links going to <code>uninspected</code> and <code>success</code>
+show that most parts are not inspected while a few are inspected successfully.</p>
+<h1><a class="anchor" aria-hidden="true" id="cost-piece"></a><a href="#cost-piece" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cost/Piece</h1>
+<p>Cost-per-piece is a great <a href="/docs/improve-fms.html">actionable insight</a> for scheduling, operations
+management, future capital purchases, quoting work, accounting, and
+budgeting. The cost/piece tab is largely intended to serve as a
+verification that flexibility and operational changes are reducing part
+costs; you can compare part costs from before a change to after a change to
+understand if the change improved the system.
+Indeed, FMS Insight has a narrow view of just the cell itself and does not
+take into account any overhead or other costs. Therefore, for budgeting,
+quoting work, and other management decisions, we suggest that you <a href="/docs/workorder-report.html">export the
+workorder data</a> to your ERP and implement a cost report
+in your ERP taking into account all factors.</p>
+<p>Cost/piece is not a great metric for improving the cell's operations since
+focusing only on cost/piece risks introducing quality problems and OEE
+reduction when shared costs are not correctly accounted. Instead, the
+efficiency tab should be used to improve the system.</p>
+<h2><a class="anchor" aria-hidden="true" id="calculations"></a><a href="#calculations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculations</h2>
+<p>Calculating cost-per-piece requires splitting large fixed costs such as machine depreciation and
+labor across the parts that were produced. To do so, we use a monthly analysis window and
+divide large fixed costs by the planned use of resources.</p>
+<p>For example, consider that a machine depreciates at $7,000 a month and you have a 4-machine system, so that
+the total machining overhead is $28,000 a month. The system produces two part types, aaa and bbb,
+and aaa has a planned cycle time of 3 hours and bbb has a planned cycle time of 2 hours.
+For January we collect data on the total number of parts produced by the system. Consider that
+in January the system produced 400 aaa parts and 500 bbb parts. We then calculate cost-per-piece as
+follows. Since we produced 400 aaa parts, those aaa parts should have used 400*3 = 1200
+machine-hours. Similarly, the bbb parts should have used 500*2 = 1000 hours. The $28,000 machine
+cost is then divided using these planned machine-hours as weights. That is, of the planned machine
+hours, aaa used <code>1200 / (1000 + 1200) = 54.5%</code> of the hours and bbb used
+<code>1000 / (1000 + 1200) = 45.5%</code> of the hours. Then</p>
+<pre><code class="hljs">total machining cost of aaa in January = $28,000 * 0.545 = $15,272
+machining cost-per-piece of aaa in January = $15,272 / 400 = $38.18
+</code></pre>
+<p>and</p>
+<pre><code class="hljs">total machining cost of bbb in January = $28,000 * 0.455 = $12,727
+machining cost-per-piece of bbb in January = $12,727 / 500 = $25.45
+</code></pre>
+<p>Similar calculations happen for labor, tooling, and inspection. (Also, there are some
+simplifications and cancellations that can be made in the above formulas, but in our experience calculating the
+percentages first and then the cost helps improve visibility.)</p>
+<p>From a cost perspective, any bottlenecks or utilization slowdowns should be viewed as system
+problems and all parts are responsible for a portion of this cost. Indeed, The cost-per-piece
+metric is an actionable insight for quoting orders and justifying future capital investments and for
+these purposes any OEE problems are a problem for everything produced by the system. The above
+method does this by using planned cycle times to divide the total machine cost (which includes
+active and idle time) among the parts produced during the month based on their weights. A quick
+calculation of machine utilization gives <code>(1200 + 1000) / (24*30*4) = 76%</code> use. The above method
+divides the 24% of the time the machine is not in use among aaa and bbb based on their percentages
+of planned use. Attempting to identify OEE problems are better addressed using the efficiency tab.</p>
+<h2><a class="anchor" aria-hidden="true" id="cost-inputs"></a><a href="#cost-inputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cost Inputs</h2>
+<p>In the top card labeled &quot;Cost Inputs&quot;, enter the number of operators assigned
+to the cell and their total hourly rate. FMS Insight will multiply the number
+of operators times the cost per hour times the total month time to obtain a
+total cost of labor for the cell. Next, enter the cost per year of each individual
+station; that is, in the machine row, enter the cost of a single machine. FMS Insight
+will multiply this cost by the number of machines and divide it by 12 to obtain a total
+cost of the station.</p>
+<h2><a class="anchor" aria-hidden="true" id="part-cost-piece"></a><a href="#part-cost-piece" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part Cost/Piece</h2>
+<p><img src="/docs/assets/insight-part-cost.jpg" alt="Screenshot of part cost/piece page"></p>
+<p>The card labeled &quot;Part Cost/Piece&quot; then shows the results of the cost
+calculations. FMS Insight takes the total labor and station costs calculated
+for the whole month and then divides it among the parts weighted by their use
+of the labor or station. For example, when dividing up machining cost, FMS
+Insight will sum up the expected machine cycle time for all part cycles that
+were produced during the month, and then sum up the expected machine cycle
+time for part <code>aaa</code>. Dividing these two quantities, FMS Insight obtains a
+percentage use of the machine for part <code>aaa</code>. FMS Insight takes the total
+machine cost (number of machines times machine yearly cost divided by 12) and
+multiplies it by the use percentage. This produces the machining cost of the
+<code>aaa</code> part for the month, and finally this cost is divided by the number of
+<code>aaa</code> parts produced to obtain a cost/piece. This calculation is repeated for
+each station and for the labor use.</p>
+<p>For automation costs, FMS Insight first computes the total number of pallet cycles over the whole month
+(a pallet cycle consists of a pallet leaving the load station, being machined, and returning
+to the load station). Next, for each part, FMS Insight sums up the number of pallet cycles
+for this part. Dividing these two, we obtain a percentage of the pallet cycles used for
+a specific part. The total automation cost is then divided up among the parts based on
+their percentage use of all the pallet cycles.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-quality.html"><span class="arrow-prev">← </span><span>Quality</span></a><a class="docs-next button" href="/docs/client-backup-viewer.html"><span>Backup Viewer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#station-cycles">Station Cycles</a></li><li><a href="#pallet-cycles">Pallet Cycles</a></li><li><a href="#station-oee">Station OEE</a></li><li><a href="#part-production">Part Production</a></li><li><a href="#inspections">Inspections</a></li><li><a href="#calculations">Calculations</a></li><li><a href="#cost-inputs">Cost Inputs</a></li><li><a href="#part-cost-piece">Part Cost/Piece</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2019 Black Maple Software, LLC</section></footer></div></body></html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Use analytics to improve a FMS · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The performance of an automated flexible machining system (FMS) depends on"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Use analytics to improve a FMS · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="The performance of an automated flexible machining system (FMS) depends on"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basics</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started.html">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Use analytics to improve a FMS</h1></header><article><div><span><p>The performance of an automated flexible machining system (FMS) depends on
+the interaction between scheduling, part programming, operations, engineering
+design, quality control, tooling, purchasing, and more. This encourages a
+holistic view of the entire system instead of focusing on each component
+(such as part programming) in isolation. Recent advances in big data
+technology make it easier than ever to understand the entire manufacturing
+process, investigate trade-offs, and calculate metrics on monthly
+cost-per-piece, resource utilization, and system bottlenecks. Data analytics
+leads to understanding the entire system as a whole and actionable insights
+for improvements and future investments in automation and process
+improvement.</p>
+<h2><a class="anchor" aria-hidden="true" id="actionable-insights"></a><a href="#actionable-insights" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Actionable Insights</h2>
+<p>Data collection and analytics focuses on presenting <a href="https://www.forbes.com/sites/brentdykes/2016/04/26/actionable-insights-the-missing-link-between-data-and-business-value/">actionable
+insights</a>.
+Raw data collection and information visualization can generate many metrics and insights into a
+system, but the challenge is to produce clear, relevant, specific insights. For a FMS, in our
+experience there are two metrics which lead to actionable insights: cost-per-piece and resource utilization.</p>
+<p>Cost-per-piece is a great actionable insight because it is easy to understand, specific to the
+ultimate purpose of the FMS, highly relevant to the business, and can be clearly presented to all
+stakeholders. For ordering, an accurate analysis of cost-per-piece allows easy quoting of work.
+For accounting, cost-per-piece allows justifications for future capital investments in new machines
+or new automation. For operational management, cost-per-piece helps understand the impact of a
+process change. That is, management can see if a process change has improved cost-per-piece and
+therefore if the process change should be kept or adjusted. The entire business benefits from
+visible and accurate cost-per-piece metrics, because various departments and employees can see that
+even if a change requires them to perform extra work, it improves the overall business value of the
+system. The only data required from daily operations is the monthly quantity of parts produced,
+and it is implemented on the <a href="/docs/client-flexibility-analysis.html">flexibility analysis page</a>.</p>
+<p>While it is the ultimate goal, overall cost-per-piece is not a useful metric to improve the system.
+Sure, a cost-per-piece breakdown will show the costs of labor, machining, and tooling but how do
+you turn that into a plan to change something? Also, focusing on improving cost-per-piece directly
+risks optimizing cost by sacrificing quality. Instead, the best metric for continuous improvement
+is the bottlenecks and utilization of system resources, since the goal is to produce more stuff with
+the same machines and quality.</p>
+<p>Utilization and bottleneck metrics are more difficult to turn into actionable insights. Many
+companies generate OEE (operational equipment effectiveness) data or collect machine utilization and
+bottleneck information, but seemingly inconsequential details in one area can have large impacts in
+other areas. For example, the chosen part programming technique might require complex operational
+part tracking on the shop floor or scheduling techniques might increase quality control overhead.
+When each department focuses only on their own slice of the system, they can't turn these insights
+into actions.</p>
+<p>To turn the system utilization and performance metrics into actionable insights, we suggest the
+creation of a tactics council. The tactics council is made up of a representative from each
+department and component of the system, and the council's job is to decide on the overall tactics for system
+operation. By combining representatives from all areas of the system, the tactics council can
+produce actions (changes in how the system operates) based on the information and metrics on OEE and
+system performance. Helpful efficiency metrics and graphs are displayed in the
+<a href="/docs/client-flexibility-analysis.html">flexibility analysis page</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="tactics-council"></a><a href="#tactics-council" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tactics Council</h2>
+<p>How can we produce actions from the various insights and information on OEE, machine utilization,
+labor use, and system performance? Because improving a FMS requires coordination between various
+stakeholders across several departments, a great management technique is a tactics council made up of a representative from
+part programming, operations, scheduling, tooling, quality control, accounting, and anyone else
+involved in the system. The council is the primary recipient of the system performance
+metrics, meets once every 6 weeks or once every two months, reviews the data,
+brainstorms improvements, and has final authority on the overall tactics for how the FMS operates.</p>
+<p>Plan. Do. Check. Adjust. The <a href="https://en.wikipedia.org/wiki/PDCA">PDCA technique</a> is an effective
+strategy to improve the performance of an existing FMS and is ideal for the tactics council.
+During the tactics council meeting, the council will perform the plan and
+adjust phases of PDCA and in the 6-weeks to two months between meetings, individual departments will
+perform the do and check phases of PDCA. The tactics council should focus on only a single or at
+most two improvements at once.</p>
+<p>For example, say that an improvement idea is to implement <a href="/docs/material-tracking.html">material tracking</a> by adding a serial and barcode to each part during
+machining and then scanning the barcode at the inspection station, allowing the inspection operator to
+view the pallet, machine, and time for this specific part. The first step is to develop the plan,
+which would include the cost of purchasing a barcode printer, an analysis of the extra time at the
+load station applying the barcode to the part, a target for reducing the percentage of parts that
+require inspection, the cost savings from the reduced inspections, and other facets such as
+training. This plan is presented to the tactics council, the council discusses it, and say the
+tactics council agrees to implement this change. In the 6-weeks to two months between council
+meetings, operations will purchase the barcode printer, start barcoding parts, and start collecting
+data (the do and check steps of PDCA). The inspection stand will start using the barcodes and
+importantly record data on quality improvements. The next tactics council meeting can then review
+the data to understand the impact on overall cost-per-piece and system performance. By reviewing
+these metrics, the council can decide on any adjustments if necessary.</p>
+<p>The tactics council is an important management technique because it encourages buy-in from everyone
+to improve overall cost-per-piece and system performance instead of focusing on individual isolated
+metrics such as cycle times or inspection rates. Typical improvements are similar to the previous
+example, where one department (such as operations) has extra work and a different department (such
+as quality control) sees an improvement. The tactics council and the repetitive nature of the PDCA
+technique keeps everyone happy, because the next improvement implemented by the council might
+improve operations while the inspection stand might have some extra work. Since everyone has a
+representative on the tactics council and the tactics council focuses on part cost-per-piece and
+total system performance, one department refusing to implement a change is greatly reduced.</p>
+<h2><a class="anchor" aria-hidden="true" id="continuous-improvement"></a><a href="#continuous-improvement" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Continuous Improvement</h2>
+<p>The utilization and bottleneck metrics which lead to actionable insights vary
+by system and part mix. The overall system OEE is easy to calculate by taking
+the total quantity of parts produced in a month, adding up their planned
+time, and dividing by the hours in a month. But the OEE is not an actionable
+insight: is the OEE lowered by a pallet traffic jam, a problem in a
+part-program, tooling capacity limitations, cart contention, load station
+inattention, or something else? This is where the repetitive nature of the
+PDCA technique shines. Every two months, the tactics council meets, reviews
+the available data, and can suggest new metrics based on what was learned
+from the previous reports. For example, perhaps the overview of the system
+identifies that pallet 5 has very irregular and erratic flow times. This
+could be caused by competition between pallets, lack of flexibility, traffic
+jams, a problem in the part-program of a part run on pallet 5, lack of tool
+capacity, or something else. In this case, more detailed data collection can
+focus on pallet 5 to help identify the problem.</p>
+<h2><a class="anchor" aria-hidden="true" id="cost-report"></a><a href="#cost-report" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cost report</h2>
+<p>Calculating cost-per-piece requires splitting large fixed costs such as machine depreciation and
+labor across the parts that were produced. To do so, we suggest a monthly analysis window and
+dividing costs by planned use of resources. Collect data on the total quantity of parts produced
+during a month, along with their planned use of each resource such as machining time, load station
+time, tooling use, and inspection time and rates. The total cost is then divided among the parts
+according to weights based on their planned use of system resources. The cost-per-part can then be
+<a href="/docs/workorder-report.html">exported to the ERP</a> and combined with order data from the ERP to calculate a cost-per-order.</p>
+<p>The cost-per-piece is the primary metric and insight produced by the tactics council. It should be
+broadcast to the entire business as an actionable insight for quoting work, future capital investment,
+and general accounting. Cost-per-piece should be produced by the tactics council itself and not
+management because the council is in the best position to decide on cost trade-offs.
+For example, there is a trade-off between quality and inspections and cost, and the council is
+in the best position to decide on the required quality and inspections and then work to reduce costs
+only under these constraints without sacrificing quality.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/material-tracking.html"><span class="arrow-prev">← </span><span>Material Tracking</span></a><a class="docs-next button" href="/docs/server-config.html"><span>Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#actionable-insights">Actionable Insights</a></li><li><a href="#tactics-council">Tactics Council</a></li><li><a href="#continuous-improvement">Continuous Improvement</a></li><li><a href="#cost-report">Cost report</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2019 Black Maple Software, LLC</section></footer></div></body></html>
