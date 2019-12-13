@@ -70,9 +70,9 @@ trust the self-signed certificate.</p>
 <p>To create a self-signed certificate, the following PowerShell commands can be used.
 You must replace the <code>$fmsInsightServer</code> variable with the IP address or DNS name that
 will be used in the browser to connect to the FMS Insight server.</p>
-<pre><code class="hljs"><span class="hljs-formula">$fmsInsightServer = "172.16.17.18"
-$</span>certificate = New-SelfSignedCertificate -CertStoreLocation cert:<span class="hljs-tag">\<span class="hljs-name">localmachine</span></span><span class="hljs-tag">\<span class="hljs-name">my</span></span> -dnsname <span class="hljs-formula">$fmsInsightServer -NotAfter (GetDate).AddYears(10)
-Export-PfxCertificate -cert ("cert:<span class="hljs-tag">\<span class="hljs-name">localMachine</span></span><span class="hljs-tag">\<span class="hljs-name">my</span></span><span class="hljs-tag">\<span class="hljs-name">"</span></span> + $</span>certificate.Thumbprint) -FilePath "c:<span class="hljs-tag">\<span class="hljs-name">ProgramData</span></span><span class="hljs-tag">\<span class="hljs-name">SeedTactics</span></span><span class="hljs-tag">\<span class="hljs-name">FMSInsight</span></span><span class="hljs-tag">\<span class="hljs-name">cert</span></span>.pfx"
+<pre><code class="hljs"><span class="hljs-variable">$fmsInsightServer</span> = <span class="hljs-string">"172.16.17.18"</span>
+<span class="hljs-variable">$certificate</span> = <span class="hljs-built_in">New-SelfSignedCertificate</span> <span class="hljs-literal">-CertStoreLocation</span> cert:\localmachine\my <span class="hljs-literal">-dnsname</span> <span class="hljs-variable">$fmsInsightServer</span> <span class="hljs-literal">-NotAfter</span> (GetDate).AddYears(<span class="hljs-number">10</span>)
+<span class="hljs-built_in">Export-PfxCertificate</span> <span class="hljs-literal">-cert</span> (<span class="hljs-string">"cert:\localMachine\my\"</span> + <span class="hljs-variable">$certificate</span>.Thumbprint) <span class="hljs-literal">-FilePath</span> <span class="hljs-string">"c:\ProgramData\SeedTactics\FMSInsight\cert.pfx"</span>
 </code></pre>
 <p>The above lines can be pasted one-by-one into an administrator PowerShell. Once completed,
 the certificate will be stored in <code>c:\ProgramData\SeedTactics\FMSInsight\cert.pfx</code>. This path
