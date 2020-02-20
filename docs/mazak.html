@@ -101,49 +101,6 @@ reports of cell operations, all without impacting the real system.</p>
 <p>The simulation lab is also great for training before the machines are even
 installed, testing out new scheduling or inspection signaling techniques, or
 training new operators and managers.</p>
-<h2><a class="anchor" aria-hidden="true" id="avoid-the-cell-controller-on-your-factory-network"></a><a href="#avoid-the-cell-controller-on-your-factory-network" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Avoid the cell controller on your factory network</h2>
-<p>Mazak does not recommend that you enable Windows updates, and Mazak cell
-controllers run on Windows XP and Windows 8 which no longer receive support
-and security updates from Microsoft. In addition, the FMS Insight server
-requires Windows 7 or later so can't be installed on Version E cell controllers
-using Windows XP. To avoid putting the cell controller on your factory network
-directly, we suggest the following setup:</p>
-<ul>
-<li><p>Obtain a Windows 10 computer to be placed on the factory floor nearby the
-cell controller. (Windows 7 also works but Microsoft is ending support for
-Windows 7 in 2020.) Call this computer the FMS Insight Server. This
-computer will run only the FMS Insight server software. The FMS Insight
-server software is very lightweight and will run on any relatively recent
-computer; any modern Intel or AMD CPU, 1 GB of RAM, and 10 GB of disk space
-are more than enough (the cheapest computer you can buy will have much more
-than this). The main requirement is that this Windows 10 computer have two
-network cards. The only pre-installed software required is Microsoft's .NET
-Framework version 4.6.1, which comes pre-installed on Windows 10.</p></li>
-<li><p>Connect one network card in the FMS Insight Server to your factory network.
-Connect it to your domain using your usual security policies and
-enterprise domain control. Automatic Windows Updates can be enabled.</p></li>
-<li><p>Connect the second network card in a point-to-point connection (perhaps with a
-crossover cable) to the Mazak Cell Controller using static IPs
-for both sides of the connection. On the FMS Insight Server, you can set up
-a firewall to disallow all network traffic between the factory network and
-the cell controller. The only computer that needs direct communication with
-the Mazak cell controller is the FMS Insight Server. All other computers
-and software in the factory will connect to the FMS Insight Server over the
-factory network.</p></li>
-<li><p>(Version E And Web) For Mazak Web or Mazak Version E, on the Mazak cell controller
-create a network share of the <code>c:\Mazak\NFMS\DB</code>
-directory. On the FMS Insight server computer, edit
-<a href="/docs/server-config.html">config.ini</a> and change two settings in the Mazak section. First, set
-<code>VersionE = true</code> and then set <code>Database Path = \\&lt;ip address of cell controller&gt;\DBshare</code>
-(or whatever share name you chose).</p></li>
-<li><p>(Web and Smooth PMC) For Mazak Web or Mazak Smooth PMC, on the Mazak cell controller
-create a network share of the <code>c:\Mazak\FMS\Log</code> directory. On the FMS Insight server computer, edit
-<a href="/docs/server-config.html">config.ini</a> and set <code>Log CSV Path = \\&lt;ip address of cell controller\MazakLog</code>
-(or whatever share name you chose).</p></li>
-<li><p>(Smooth PMC) Mazak Smooth PMC uses SQL Server which FMS Insight can access over the network.
-Edit the <a href="/docs/server-config.html">config.ini</a> file and set the <code>SQL ConnectionString</code> setting
-to a SQL Server connection string which uses the IP address of the Mazak cell controller.</p></li>
-</ul>
 <h2><a class="anchor" aria-hidden="true" id="starting-offset-and-decrement-priority"></a><a href="#starting-offset-and-decrement-priority" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Starting Offset and Decrement Priority</h2>
 <p>The Mazak <a href="/docs/server-config.html">config.ini</a> contains a setting <code>Use Starting Offset</code>
 which control how new schedules are added into the cell controller.</p>
@@ -183,4 +140,4 @@ uncompleted schedules. Since each day a new schedule is downloaded, if
 priorities of existing schedules are first decrement then any unfinished work
 from the previous day gains higher priority and will finish before today's
 schedule starts.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-backup-viewer.html"><span class="arrow-prev">← </span><span>Backup Viewer</span></a><a class="docs-next button" href="/docs/makino.html"><span>Makino</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#open-database-kit">Open Database Kit</a></li><li><a href="#enable-log-csv">Enable Log CSV</a></li><li><a href="#load-instructions">Load Instructions</a></li><li><a href="#simulation-lab">Simulation Lab</a></li><li><a href="#avoid-the-cell-controller-on-your-factory-network">Avoid the cell controller on your factory network</a></li><li><a href="#starting-offset-and-decrement-priority">Starting Offset and Decrement Priority</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2020 Black Maple Software, LLC</section></footer></div></body></html>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-backup-viewer.html"><span class="arrow-prev">← </span><span>Backup Viewer</span></a><a class="docs-next button" href="/docs/makino.html"><span>Makino</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#open-database-kit">Open Database Kit</a></li><li><a href="#enable-log-csv">Enable Log CSV</a></li><li><a href="#load-instructions">Load Instructions</a></li><li><a href="#simulation-lab">Simulation Lab</a></li><li><a href="#starting-offset-and-decrement-priority">Starting Offset and Decrement Priority</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2020 Black Maple Software, LLC</section></footer></div></body></html>
