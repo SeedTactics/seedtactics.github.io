@@ -140,10 +140,27 @@ and filterable chart of recent machine cycles.</p>
 <p><img src="/docs/assets/insight-machine-outliers.png" alt="Screenshot of Machine outliers"></p>
 <p><img src="/docs/assets/insight-machine-hours.png" alt="Screenshot of machine hours"></p>
 <p><img src="/docs/assets/insight-machine-cycle-graph.png" alt="Screenshot of machine cycles"></p>
-<h1><a class="anchor" aria-hidden="true" id="completed-parts"></a><a href="#completed-parts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Completed Parts</h1>
-<p>The <em>Completed Parts</em> tab shows the supervisor an overview of the scheduled and actual parts produced in the past 7 days.
-In each table cell, the actual parts are listed first followed by a slash and then the scheduled parts.</p>
-<p><img src="/docs/assets/insight-completed-parts.png" alt="Screenshot of Completed Parts"></p>
+<h1><a class="anchor" aria-hidden="true" id="schedules"></a><a href="#schedules" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Schedules</h1>
+<p>The <em>Schedules</em> tab shows the supervisor an overview of the scheduled and actual parts produced in the past 7 days.
+The table lists all the jobs downloaded from the past seven days together with the quantities of parts in various
+stages.</p>
+<p><img src="/docs/assets/insight-scheduled-parts.png" alt="Screenshot of Scheduled Parts"></p>
+<ul>
+<li>The <em>Note</em> column allows the user to enter a note for each schedule (does not impact the production in any way,
+just useful as a comment field).</li>
+<li>The <em>Scheduled</em> column shows the original quantity of parts downloaded into the cell controller as part of the job.</li>
+<li>The <em>Removed</em> column shows the count of planned parts that have been removed from the cell controller by an operator
+after the job was downloaded.</li>
+<li>The <em>Completed</em> column shows the count of parts that have been logged to be completed.</li>
+<li>The <em>In Process</em> column shows the count of material currently on pallets or inside in-process queues.</li>
+<li>The <em>Remaining To Run</em> column shows the quantity of parts that the cell controller is currently configured
+to produce.</li>
+</ul>
+<p>Note that in an ideal situation these numbers add up properly (scheduled = completed + in-process + remaining),
+this does not need to be the case. If parts are scrapped, an operator or supervisor edits the schedules in the
+cell controller, or other unplanned changes are made, the quantity of parts in these columns is updated to
+reflect the current sitation on the shop floor. Thus, this table can be used to provide an overview of the
+actual operations as compared to the original planned schedule.</p>
 <h1><a class="anchor" aria-hidden="true" id="material"></a><a href="#material" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Material</h1>
 <p>The Material screen displays all <a href="/docs/material-tracking.html">virtual whiteboard regions</a>. This includes the regions for all pallets
 and all configured in-process queues. If <a href="/docs/material-quarantine.html">quarantined material</a> is enabled (as seen in the
