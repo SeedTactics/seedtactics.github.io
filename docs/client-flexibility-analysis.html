@@ -196,10 +196,12 @@ take into account any overhead or other costs. Therefore, for budgeting,
 quoting work, and other management decisions, we suggest that you <a href="/docs/workorder-report.html">export the
 workorder data</a> to your ERP and implement a cost report
 in your ERP taking into account all factors.</p>
-<p>Cost/piece is not a great metric for improving the cell's operations since
+<p>Cost/piece is not a great metric to use initially when searching for techniques
+to improve the cell's operation, since
 focusing only on cost/piece risks introducing quality problems and OEE
-reduction when shared costs are not correctly accounted. Instead, the
-efficiency tab should be used to improve the system.</p>
+reduction. Instead, cost/piece is a great metric to use after-the-fact to determine
+if an implemented change in production operations has had a meaningful impact on
+cost/piece.</p>
 <h2><a class="anchor" aria-hidden="true" id="calculations"></a><a href="#calculations" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Calculations</h2>
 <p>Calculating cost-per-piece requires splitting large fixed costs such as machine depreciation and
 labor across the parts that were produced. To do so, we use a monthly analysis window and
@@ -233,20 +235,13 @@ active and idle time) among the parts produced during the month based on their w
 calculation of machine utilization gives <code>(1200 + 1000) / (24*30*4) = 76%</code> use. The above method
 divides the 24% of the time the machine is not in use among aaa and bbb based on their percentages
 of planned use. Attempting to identify OEE problems are better addressed using the efficiency tab.</p>
-<h2><a class="anchor" aria-hidden="true" id="cost-inputs"></a><a href="#cost-inputs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cost Inputs</h2>
-<p>In the top card labeled &quot;Cost Inputs&quot;, enter the number of operators assigned
-to the cell and their total hourly rate. FMS Insight will multiply the number
-of operators times the cost per hour times the total month time to obtain a
-total cost of labor for the cell. Next, enter the cost per year of each individual
-station; that is, in the machine row, enter the cost of a single machine. FMS Insight
-will multiply this cost by the number of machines and divide it by 12 to obtain a total
-cost of the station.</p>
 <h2><a class="anchor" aria-hidden="true" id="part-costpiece"></a><a href="#part-costpiece" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Part Cost/Piece</h2>
-<p><img src="/docs/assets/insight-part-cost.jpg" alt="Screenshot of part cost/piece page"></p>
-<p>The card labeled &quot;Part Cost/Piece&quot; then shows the results of the cost
-calculations. FMS Insight takes the total labor and station costs calculated
+<p><img src="/docs/assets/insight-part-cost.png" alt="Screenshot of part cost/piece page"></p>
+<p>The card labeled &quot;Part Cost/Piece&quot; shows the results of the cost
+calculations, based on the values entered in the &quot;Cost Inputs&quot; card.
+FMS Insight takes the total labor and station costs calculated
 for the whole month and then divides it among the parts weighted by their use
-of the labor or station. For example, when dividing up machining cost, FMS
+of the resource. For example, when dividing up machining cost, FMS
 Insight will sum up the expected machine cycle time for all part cycles that
 were produced during the month, and then sum up the expected machine cycle
 time for part <code>aaa</code>. Dividing these two quantities, FMS Insight obtains a
@@ -262,4 +257,5 @@ to the load station). Next, for each part, FMS Insight sums up the number of pal
 for this part. Dividing these two, we obtain a percentage of the pallet cycles used for
 a specific part. The total automation cost is then divided up among the parts based on
 their percentage use of all the pallet cycles.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-quality.html"><span class="arrow-prev">← </span><span>Quality</span></a><a class="docs-next button" href="/docs/client-backup-viewer.html"><span>Backup Viewer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#station-cycles">Station Cycles</a></li><li><a href="#pallet-cycles">Pallet Cycles</a></li><li><a href="#station-oee">Station OEE</a></li><li><a href="#part-production">Part Production</a></li><li><a href="#inspections">Inspections</a></li><li><a href="#calculations">Calculations</a></li><li><a href="#cost-inputs">Cost Inputs</a></li><li><a href="#part-costpiece">Part Cost/Piece</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2020 Black Maple Software, LLC</section></footer></div></body></html>
+<p>The data can be copied to the clipboard via the two-arrow-icon button in the top right.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-quality.html"><span class="arrow-prev">← </span><span>Quality</span></a><a class="docs-next button" href="/docs/client-backup-viewer.html"><span>Backup Viewer</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#station-cycles">Station Cycles</a></li><li><a href="#pallet-cycles">Pallet Cycles</a></li><li><a href="#station-oee">Station OEE</a></li><li><a href="#part-production">Part Production</a></li><li><a href="#inspections">Inspections</a></li><li><a href="#calculations">Calculations</a></li><li><a href="#part-costpiece">Part Cost/Piece</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/getting-started.html">Getting Started</a><a href="/docs/client-launch.html">Client</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a><a href="/docs/getting-started.html#downloads">Downloads</a></div></section><section class="copyright">Copyright © 2020 Black Maple Software, LLC</section></footer></div></body></html>
