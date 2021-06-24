@@ -1,137 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Operator Procedures · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="FMS Insight provides [targeted pages](/docs/client-station-monitor.html) for operators on the factory floor:"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Operator Procedures · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="FMS Insight provides [targeted pages](/docs/client-station-monitor.html) for operators on the factory floor:"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Basics</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/operator-procedures.html">Procedures</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li><li class="navListItem"><a class="navItem" href="/docs/material-quarantine.html">Material Quarantine</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem"><a class="navItem" href="/docs/client-tools-programs.html">Tools &amp; Programs</a></li><li class="navListItem"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-cost-per-piece.html">Cost/Piece</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li><li class="navListItem"><a class="navItem" href="/docs/niigata.html">Niigata</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
+<!DOCTYPE html>
+<html>
 
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
+<head>
+  <meta charset="utf-8">
+  <title>SeedTactic FMS Insight</title>
+  <meta http-equiv="refresh" content="0; URL=https://www.seedtactics.com/docs/fms-insight/operator-procedures">
+  <link rel="canonical" href="https://www.seedtactics.com/docs/fms-insight/operator-procedures">
+</head>
 
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
+<body>
+  <p>Redirecting to <a href="https://www.seedtactics.com">https://www.seedtactics.com</a></p>
+</body>
 
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Operator Procedures</h1></header><article><div><span><p>FMS Insight provides <a href="/docs/client-station-monitor.html">targeted pages</a> for operators on the factory floor:
-a page for each load station which shows the material to load or unload, a page for each inspection stand
-showing details about the material to be inspected, a page for the wash station, and finally a page
-for in-process material queue management. These pages use the <a href="/docs/material-tracking.html">whiteboard metaphor</a>
-for material tracking. We suggest that each station has a dedicated display or tablet with the relevant page
-bookmarked or made the homepage; these pages are designed to work on a touchscreen. In addition, each station
-should have an attached barcode scanner.</p>
-<h2><a class="anchor" aria-hidden="true" id="loadunload-procedures"></a><a href="#loadunload-procedures" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Load/Unload Procedures</h2>
-<p>FMS Insight's load station page will display what the cell controller
-is expecting to happen at the load station. Specifically, the page will display the material
-to load, the material to unload, and the material to transfer between faces (if the pallet has
-multiple faces). If the operator performs all the tasks as specified, the operator presses
-the load button to signal to the cell controller that the load is complete. FMS Insight monitors
-the cell controller and will update the page.</p>
-<p><img src="/docs/assets/insight-load-station.png" alt="Screenshot of Load Station screen"></p>
-<p>If queues are used for managing material, the load station screen also can show the queues on the
-right hand side. The specific material that is marked as loaded is the first material in the queue
-which matches the job and route details. The material in the queue can be re-ordered by dragging,
-which allows the operator to control which serial is loaded onto the pallet. Note that because
-the cell controller has already assigned a job to the pallet at the load station, the material
-at the front of the queue will not always be the material that is loaded; the first material which
-matches the job is loaded.</p>
-<h2><a class="anchor" aria-hidden="true" id="introducing-raw-material"></a><a href="#introducing-raw-material" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introducing Raw Material</h2>
-<p>The <a href="/docs/creating-jobs.html">jobs</a> control how raw material is introduced. If no raw
-material queue is set on the job, the cell controller will assume that raw material is
-always available and bring a pallet to be loaded as soon as it is empty. FMS Insight is watching
-the cell controller and will create new material once the load is complete.</p>
-<p>Alternatively, the job can be configured with an input queue on the first process. In this case,
-the contents of the queue control when the cell controller will bring a pallet to the load
-station to be loaded. The Queues webpage shows the contents of the queue and allows the operator
-to scan or enter new material into the queue. The page also shows a table of scheduled jobs and
-shows the quantity of parts that still must be loaded.</p>
-<p><img src="/docs/assets/insight-queues-jobs-table.png" alt="Screenshot of queues page"></p>
-<p>The operator should physically bring the casting/raw material to the cell and place it in
-a designated area nearby the load station. Once the material has arrived, the operator
-can click a button on the queues webpage (or scan a barcode) to add the material to the queue.
-FMS Insight supports a variety of techniques controlled by <a href="/docs/server-config.html">config settings</a>:
-adding raw material assigned to a specific job, adding raw material with or without a serial,
-or bulk adding a large quantity of material.</p>
-<p>Each physical location on the shop floor which holds material should coorespond to a queue
-in FMS Insight. In addition, each queue should have a dedicated display or tablet mounted
-on the shop floor right next to the queue. This display should have the queues page
-bookmarked or set as the homepage and only show the queues page. This allows the operators
-and supervisors to quickly check at a glance that the material on the shop floor matches
-the material FMS Insight records as in the queue.</p>
-<h2><a class="anchor" aria-hidden="true" id="quarantine-material"></a><a href="#quarantine-material" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quarantine Material</h2>
-<p>FMS Insight optionally supports the ability to <a href="/docs/material-quarantine.html">quarantine material</a>.
-Quarantined material is material that is temporarily removed from the cell for re-machining,
-more detailed inspection, or some other rework. Material can be quarantined on the queues
-page by opening the material dialog and clicking a button. This moves the material to
-the quarantine queue where it is visible on the supervisor's material page.</p>
-<p>Once the material is ready to be re-introduced into the cell, the operator should bring it
-back to the shop floor. Once the material has arrived, the operator can click a button on
-the queues webpage (or scan the barcode) to add the material into the queue. Once it is
-back in the queue, the cell controller will activate a pallet to load the material.</p>
-<h2><a class="anchor" aria-hidden="true" id="recovering-from-misload"></a><a href="#recovering-from-misload" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recovering From Misload</h2>
-<p>The load station page displays the load, unload, or reclamp steps that the cell
-controller is expecting the operator to preform. When the operator presses the ready button,
-both the cell controller and FMS Insight (which is watching the cell controller) assumes
-that these instructions took place. FMS Insight will take the material from the input queue
-and record it as loaded onto the pallet. The cell controller will begin moving the pallet
-to the machine.</p>
-<p>If for whatever reason the load instructions can not be followed, idealy the operator should
-edit the cell controller <strong>before</strong> the load is completed. FMS Insight will adjust itself
-based on whatever the cell controller expects to happen and only at the time that the load
-is completed is anything finalized and recorded.</p>
-<p>If the load button is pressed, the first step is to adjust the status in the cell controller
-to match what actually happened. FMS Insight is watching the cell controller and when
-the pallet status is adjusted, FMS Insight will move any material that was thought to
-be loaded on the pallet to the quarantine queue. That material can then be re-introduced
-back into the queue so that the queue in FMS Insight matches the material on the shop floor.
-In addition, FMS Insight allows the ability to invalidate the inadvertant load events that
-were created.</p>
-<p>Finally, in certian situations depending on the specific configuration of the jobs and queues,
-FMS Insight supports a serial swap. FMS Insight assumes the material that is loaded is the
-first material in the queue which matches the job the cell controller expects.
-If the serial actually loaded is different but the job and detials match, the supervisor can
-swap the two serials on the supervisor's material page. This is a data-only change and no
-change is made to the cell controller. If a swap cannot be performed, the material must be
-quarantined and invalidated as described above.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/improve-fms.html"><span class="arrow-prev">← </span><span>Monthly Review</span></a><a class="docs-next button" href="/docs/server-config.html"><span>Configuration</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#loadunload-procedures">Load/Unload Procedures</a></li><li><a href="#introducing-raw-material">Introducing Raw Material</a></li><li><a href="#quarantine-material">Quarantine Material</a></li><li><a href="#recovering-from-misload">Recovering From Misload</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/client-launch.html">Client</a><a href="/docs/server-config.html">Server</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a></div></section><section class="copyright">Copyright © 2021 Black Maple Software, LLC</section></footer></div></body></html>
+</html>

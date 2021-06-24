@@ -1,78 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Creating Jobs and Schedules · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="FMS Insight provides the conduit to automatically create jobs and schedules"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Creating Jobs and Schedules · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="FMS Insight provides the conduit to automatically create jobs and schedules"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Server</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li><li class="navListItem"><a class="navItem" href="/docs/operator-procedures.html">Procedures</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li><li class="navListItem"><a class="navItem" href="/docs/material-quarantine.html">Material Quarantine</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem"><a class="navItem" href="/docs/client-tools-programs.html">Tools &amp; Programs</a></li><li class="navListItem"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-cost-per-piece.html">Cost/Piece</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li><li class="navListItem"><a class="navItem" href="/docs/niigata.html">Niigata</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
+<!DOCTYPE html>
+<html>
 
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
+<head>
+  <meta charset="utf-8">
+  <title>SeedTactic FMS Insight</title>
+  <meta http-equiv="refresh" content="0; URL=https://www.seedtactics.com/docs/tactics/orders-erp-automation">
+  <link rel="canonical" href="https://www.seedtactics.com/docs/tactics/orders-erp-automation">
+</head>
 
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
+<body>
+  <p>Redirecting to <a href="https://www.seedtactics.com">https://www.seedtactics.com</a></p>
+</body>
 
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Creating Jobs and Schedules</h1></header><article><div><span><p>FMS Insight provides the conduit to automatically create jobs and schedules
-in the cell controller. External software is needed to create the jobs,
-prioritize the work, and make sure no traffic jams occur (too much work for
-too few machines) and that the cell stays efficient (enough jobs are created
-to keep the machines busy). Despite requiring extra software, automatic job
-download provides a large benefit in station utilization and lean
-manufacturing when running a large variety of parts with variable part
-quantities.</p>
-<p>One option is paying for our <a href="https://www.seedtactics.com/products/seedtactic-orderlink">SeedTactic:
-OrderLink</a>
-software which uses AI to automatically schedule a collection of orders and
-due dates using a customized flexibility plan. <em>OrderLink</em> will translate ERP
-orders to the format expected by FMS Insight without custom programming.</p>
-<p>Alternatively, if daily scheduling takes place directly in the ERP system,
-some custom software can be created to send the jobs and schedules from the
-ERP system into FMS Insight and then to the cell controller. To do so,
-the parts and jobs are described using a JSON document which is then posted
-to <code>http://&lt;ip address or name of server&gt;:5000/api/v1/jobs/add</code>.</p>
-<p>The specific JSON format for the jobs is described in the
-<a href="http://petstore.swagger.io/?url=https%3A%2F%2Fraw.githubusercontent.com%2FSeedTactics%2Ffms-insight%2Fmaster%2Fserver%2Ffms-insight-api.json">swagger document</a>, in particular the <code>NewJobs</code> model. For more details,
-see the <a href="https://github.com/SeedTactics/fms-insight">source code</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/security.html"><span class="arrow-prev">← </span><span>Security</span></a><a class="docs-next button" href="/docs/workorder-report.html"><span>Workorder Report</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/client-launch.html">Client</a><a href="/docs/server-config.html">Server</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a></div></section><section class="copyright">Copyright © 2021 Black Maple Software, LLC</section></footer></div></body></html>
+</html>

@@ -1,87 +1,15 @@
-<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Engineering Daily Monitoring · SeedTactic FMS Insight</title><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The _Engineering_ page is intended for the part programming engineers. We suggest they bookmark this page and"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Engineering Daily Monitoring · SeedTactic FMS Insight"/><meta property="og:type" content="website"/><meta property="og:url" content="https://fms-insight.seedtactics.com/index.html"/><meta property="og:description" content="The _Engineering_ page is intended for the part programming engineers. We suggest they bookmark this page and"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight"/><h2 class="headerTitleWithLogo">SeedTactic FMS Insight</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/SeedTactics/fms-insight" target="_self">Source Code</a></li><li class=""><a href="/demo/demo.html" target="_self">Demo</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Client</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Basics</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="/docs/material-tracking.html">Material Tracking</a></li><li class="navListItem"><a class="navItem" href="/docs/improve-fms.html">Monthly Review</a></li><li class="navListItem"><a class="navItem" href="/docs/operator-procedures.html">Procedures</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Server</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/server-config.html">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/server-errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="/docs/security.html">Security</a></li><li class="navListItem"><a class="navItem" href="/docs/creating-jobs.html">Creating Schedules</a></li><li class="navListItem"><a class="navItem" href="/docs/workorder-report.html">Workorder Report</a></li><li class="navListItem"><a class="navItem" href="/docs/part-instructions.html">Instructions</a></li><li class="navListItem"><a class="navItem" href="/docs/material-quarantine.html">Material Quarantine</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Client</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/client-launch.html">Launch</a></li><li class="navListItem"><a class="navItem" href="/docs/client-scanners.html">Scanners</a></li><li class="navListItem"><a class="navItem" href="/docs/client-station-monitor.html">Stations</a></li><li class="navListItem"><a class="navItem" href="/docs/client-operations.html">Operations</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/client-engineering.html">Engineering</a></li><li class="navListItem"><a class="navItem" href="/docs/client-quality.html">Quality</a></li><li class="navListItem"><a class="navItem" href="/docs/client-tools-programs.html">Tools &amp; Programs</a></li><li class="navListItem"><a class="navItem" href="/docs/client-flexibility-analysis.html">Flexibility Analysis</a></li><li class="navListItem"><a class="navItem" href="/docs/client-cost-per-piece.html">Cost/Piece</a></li><li class="navListItem"><a class="navItem" href="/docs/client-backup-viewer.html">Backup Viewer</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Integrations</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/mazak.html">Mazak</a></li><li class="navListItem"><a class="navItem" href="/docs/makino.html">Makino</a></li><li class="navListItem"><a class="navItem" href="/docs/niigata.html">Niigata</a></li></ul></div></div></section></div><script>
-            var coll = document.getElementsByClassName('collapsible');
-            var checkActiveCategory = true;
-            for (var i = 0; i < coll.length; i++) {
-              var links = coll[i].nextElementSibling.getElementsByTagName('*');
-              if (checkActiveCategory){
-                for (var j = 0; j < links.length; j++) {
-                  if (links[j].classList.contains('navListItemActive')){
-                    coll[i].nextElementSibling.classList.toggle('hide');
-                    coll[i].childNodes[1].classList.toggle('rotate');
-                    checkActiveCategory = false;
-                    break;
-                  }
-                }
-              }
+<!DOCTYPE html>
+<html>
 
-              coll[i].addEventListener('click', function() {
-                var arrow = this.childNodes[1];
-                arrow.classList.toggle('rotate');
-                var content = this.nextElementSibling;
-                content.classList.toggle('hide');
-              });
-            }
+<head>
+  <meta charset="utf-8">
+  <title>SeedTactic FMS Insight</title>
+  <meta http-equiv="refresh" content="0; URL=https://www.seedtactics.com/docs/fms-insight/client-engineering">
+  <link rel="canonical" href="https://www.seedtactics.com/docs/fms-insight/client-engineering">
+</head>
 
-            document.addEventListener('DOMContentLoaded', function() {
-              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
-              createToggler('#tocToggler', 'body', 'tocActive');
+<body>
+  <p>Redirecting to <a href="https://www.seedtactics.com">https://www.seedtactics.com</a></p>
+</body>
 
-              var headings = document.querySelector('.toc-headings');
-              headings && headings.addEventListener('click', function(event) {
-                var el = event.target;
-                while(el !== headings){
-                  if (el.tagName === 'A') {
-                    document.body.classList.remove('tocActive');
-                    break;
-                  } else{
-                    el = el.parentNode;
-                  }
-                }
-              }, false);
-
-              function createToggler(togglerSelector, targetSelector, className) {
-                var toggler = document.querySelector(togglerSelector);
-                var target = document.querySelector(targetSelector);
-
-                if (!toggler) {
-                  return;
-                }
-
-                toggler.onclick = function(event) {
-                  event.preventDefault();
-
-                  target.classList.toggle(className);
-                };
-              }
-            });
-        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Engineering Daily Monitoring</h1></header><article><div><span><p>The <em>Engineering</em> page is intended for the part programming engineers. We suggest they bookmark this page and
-visit it directly. The page can be used after a new part-program is introduced to closly watch the timings of
-the new program. The page can also be used to stay on top of problematic programs which are frequently interrupted.</p>
-<p><img src="/docs/assets/insight-machine-outliers.png" alt="Screenshot of Machine outliers"></p>
-<p>First, there is a table which shows cycles from the last three days which are
-statistical outliers. The outlier detection is based on the <a href="https://en.wikipedia.org/wiki/Median_absolute_deviation">median absolute
-deviation of the
-median</a>, which is
-more resiliant to outliers than the standard deviation. There are two reasons that a machine
-cycle will appear here:</p>
-<ul>
-<li>If the actual time on the machine is far away from the median actual time, the cycle will be displayed. Cycles of this
-type indicate that the program was interrupted and took longer than expected.</li>
-<li>If the expected machine time from the job is far away from the median actual time, the cycle will be displayed. Cycles of this
-type indicate that the expected time is unrealistic (as long as enough cycles are available to obtain good stastitics). In this
-case, the expected machine time in the flexibility plan should be adjusted to be equal to the median time. Alternativly,
-perhaps the program should be changed to improve the machine time.</li>
-</ul>
-<p><img src="/docs/assets/insight-machine-hours.png" alt="Screenshot of machine hours"></p>
-<p>Next, the planned and actual machine hours for the past 7 days are shown. The
-data can be toggled between a bar chart and a table. Anything older than 7
-days is available as part of the <a href="/docs/improve-fms.html">monthly review</a> on the
-<a href="/docs/client-flexibility-analysis.html">flexibility analysis page</a>.</p>
-<p><img src="/docs/assets/insight-machine-cycle-graph.png" alt="Screenshot of machine cycles"></p>
-<p>Finally, the page contains a chart of all machine cycles from the past 3 days. The chart can
-be zoomed by clicking and dragging, filtered to specific parts and/or
-pallets, and toggled to a table. Clicking on any point allows more details
-about the cycle to be loaded. Anything older than 3
-days is available as part of the <a href="/docs/improve-fms.html">monthly review</a> on the
-<a href="/docs/client-flexibility-analysis.html">flexibility analysis page</a>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/client-operations.html"><span class="arrow-prev">← </span><span>Operations</span></a><a class="docs-next button" href="/docs/client-quality.html"><span>Quality</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/seedtactics-logo.svg" alt="SeedTactic FMS Insight" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/overview.html">Overview</a><a href="/docs/client-launch.html">Client</a><a href="/docs/server-config.html">Server</a><a href="/demo/demo.html">Demo</a></div><div><h5>More</h5><a href="https://github.com/SeedTactics/fms-insight">GitHub</a><a href="https://www.seedtactics.com">SeedTactics</a></div></section><section class="copyright">Copyright © 2021 Black Maple Software, LLC</section></footer></div></body></html>
+</html>
